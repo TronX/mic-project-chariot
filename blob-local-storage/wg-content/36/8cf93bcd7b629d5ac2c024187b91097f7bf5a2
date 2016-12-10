@@ -1,0 +1,554 @@
+{
+    "name": "ROOT",
+    "children": {
+        "1": {
+            "name": "FCO",
+            "isMeta": true,
+            "metaType": "FCO",
+            "children": {}
+        },
+        "X": {
+            "name": "Examples",
+            "isMeta": false,
+            "metaType": "Folder",
+            "base": "Folder",
+            "children": {
+                "O": {
+                    "name": "Parking Management",
+                    "isMeta": false,
+                    "metaType": "CHARIOT Model",
+                    "base": "CHARIOT Model",
+                    "children": {
+                        "2": {
+                            "startScript": "sh LoadBalancer.sh",
+                            "providedFunctionality": "load_balancer",
+                            "name": "LoadBalancer",
+                            "stopScript": "",
+                            "requiredDevices": "",
+                            "requiredArtifacts": "",
+                            "requiredMiddleware": "",
+                            "requiredOS": "",
+                            "isMeta": false,
+                            "metaType": "ComponentType",
+                            "base": "ComponentType",
+                            "children": {
+                                "T": {
+                                    "memory": 128,
+                                    "unit": "MB",
+                                    "name": "Memory",
+                                    "isMeta": false,
+                                    "metaType": "Memory",
+                                    "base": "Memory",
+                                    "children": {}
+                                },
+                                "B": {
+                                    "unit": "MB",
+                                    "storage": 0,
+                                    "name": "Storage",
+                                    "isMeta": false,
+                                    "metaType": "Storage",
+                                    "base": "Storage",
+                                    "children": {}
+                                }
+                            }
+                        },
+                        "9": {
+                            "startScript": "sh ParkingManager.sh",
+                            "providedFunctionality": "parking_manager",
+                            "name": "ParkingManager",
+                            "stopScript": "",
+                            "requiredDevices": "",
+                            "requiredArtifacts": "",
+                            "requiredMiddleware": "",
+                            "requiredOS": "",
+                            "isMeta": false,
+                            "metaType": "ComponentType",
+                            "base": "ComponentType",
+                            "children": {
+                                "l": {
+                                    "memory": 128,
+                                    "unit": "MB",
+                                    "name": "Memory",
+                                    "isMeta": false,
+                                    "metaType": "Memory",
+                                    "base": "Memory",
+                                    "children": {}
+                                },
+                                "b": {
+                                    "unit": "MB",
+                                    "storage": 0,
+                                    "name": "Storage",
+                                    "isMeta": false,
+                                    "metaType": "Storage",
+                                    "base": "Storage",
+                                    "children": {}
+                                }
+                            }
+                        },
+                        "m": {
+                            "name": "SmartParking",
+                            "isMeta": false,
+                            "metaType": "GoalDescription",
+                            "base": "GoalDescription",
+                            "children": {
+                                "y": {
+                                    "nodeCategories": "TerminalNode",
+                                    "name": "Parking_Client_ReplicationConstraint",
+                                    "functionality": "parking_client",
+                                    "serviceComponentType": "",
+                                    "numInstances": 0,
+                                    "minInstances": 0,
+                                    "maxInstances": 0,
+                                    "kind": "PER_NODE",
+                                    "isMeta": false,
+                                    "metaType": "ReplicationConstraint",
+                                    "base": "ReplicationConstraint",
+                                    "children": {}
+                                },
+                                "d": {
+                                    "name": "Occupancy_Detector_ReplicationConstraint",
+                                    "minInstances": 7,
+                                    "maxInstances": 10,
+                                    "kind": "CLUSTER",
+                                    "functionality": "occupancy_detector",
+                                    "nodeCategories": "",
+                                    "serviceComponentType": "",
+                                    "numInstances": 0,
+                                    "isMeta": false,
+                                    "metaType": "ReplicationConstraint",
+                                    "base": "ReplicationConstraint",
+                                    "children": {}
+                                },
+                                "h": {
+                                    "name": "ClientInteraction",
+                                    "isMeta": false,
+                                    "metaType": "Objective",
+                                    "base": "Objective",
+                                    "children": {
+                                        "J": {
+                                            "name": "parking_client",
+                                            "isMeta": false,
+                                            "metaType": "Functionality",
+                                            "base": "Functionality",
+                                            "children": {}
+                                        },
+                                        "h": {
+                                            "name": "parking_manager",
+                                            "isMeta": false,
+                                            "metaType": "Functionality",
+                                            "base": "Functionality",
+                                            "children": {}
+                                        }
+                                    }
+                                },
+                                "A": {
+                                    "name": "OccupancyChecking",
+                                    "isMeta": false,
+                                    "metaType": "Objective",
+                                    "base": "Objective",
+                                    "children": {
+                                        "4": {
+                                            "dependsOn": "image_capture",
+                                            "name": "occupancy_detector",
+                                            "isMeta": false,
+                                            "metaType": "Functionality",
+                                            "base": "Functionality",
+                                            "children": {}
+                                        },
+                                        "e": {
+                                            "dependsOn": "occupancy_detector",
+                                            "name": "parking_manager",
+                                            "isMeta": false,
+                                            "metaType": "Functionality",
+                                            "base": "Functionality",
+                                            "children": {}
+                                        },
+                                        "A": {
+                                            "dependsOn": "image_capture",
+                                            "name": "load_balancer",
+                                            "isMeta": false,
+                                            "metaType": "Functionality",
+                                            "base": "Functionality",
+                                            "children": {}
+                                        },
+                                        "b": {
+                                            "dependsOn": "load_balancer",
+                                            "name": "image_capture",
+                                            "isMeta": false,
+                                            "metaType": "Functionality",
+                                            "base": "Functionality",
+                                            "children": {}
+                                        }
+                                    }
+                                },
+                                "L": {
+                                    "nodeCategories": "CameraNode",
+                                    "name": "Image_Capture_ReplicationConstraint",
+                                    "functionality": "image_capture",
+                                    "serviceComponentType": "",
+                                    "numInstances": 0,
+                                    "minInstances": 0,
+                                    "maxInstances": 0,
+                                    "kind": "PER_NODE",
+                                    "isMeta": false,
+                                    "metaType": "ReplicationConstraint",
+                                    "base": "ReplicationConstraint",
+                                    "children": {}
+                                }
+                            }
+                        },
+                        "A": {
+                            "name": "CameraNode",
+                            "isMeta": false,
+                            "metaType": "NodeCategory",
+                            "base": "NodeCategory",
+                            "children": {
+                                "m": {
+                                    "name": "wifi_cam",
+                                    "middleware": "",
+                                    "OS": "",
+                                    "isMeta": false,
+                                    "metaType": "NodeTemplate",
+                                    "base": "NodeTemplate",
+                                    "children": {
+                                        "o": {
+                                            "memory": 32,
+                                            "unit": "MB",
+                                            "name": "Memory",
+                                            "isMeta": false,
+                                            "metaType": "Memory",
+                                            "base": "Memory",
+                                            "children": {}
+                                        },
+                                        "F": {
+                                            "storage": 1024,
+                                            "unit": "MB",
+                                            "name": "Storage",
+                                            "isMeta": false,
+                                            "metaType": "Storage",
+                                            "base": "Storage",
+                                            "children": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Z": {
+                            "name": "ProcessingNode",
+                            "isMeta": false,
+                            "metaType": "NodeCategory",
+                            "base": "NodeCategory",
+                            "children": {
+                                "Y": {
+                                    "name": "edison",
+                                    "middleware": "",
+                                    "OS": "",
+                                    "isMeta": false,
+                                    "metaType": "NodeTemplate",
+                                    "base": "NodeTemplate",
+                                    "children": {
+                                        "c": {
+                                            "memory": 1024,
+                                            "unit": "MB",
+                                            "name": "Memory",
+                                            "isMeta": false,
+                                            "metaType": "Memory",
+                                            "base": "Memory",
+                                            "children": {}
+                                        },
+                                        "R": {
+                                            "storage": 4096,
+                                            "unit": "MB",
+                                            "name": "Storage",
+                                            "isMeta": false,
+                                            "metaType": "Storage",
+                                            "base": "Storage",
+                                            "children": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "R": {
+                            "name": "TerminalNode",
+                            "isMeta": false,
+                            "metaType": "NodeCategory",
+                            "base": "NodeCategory",
+                            "children": {
+                                "g": {
+                                    "name": "entry_terminal",
+                                    "middleware": "",
+                                    "OS": "",
+                                    "isMeta": false,
+                                    "metaType": "NodeTemplate",
+                                    "base": "NodeTemplate",
+                                    "children": {
+                                        "x": {
+                                            "memory": 1024,
+                                            "unit": "MB",
+                                            "name": "Memory",
+                                            "isMeta": false,
+                                            "metaType": "Memory",
+                                            "base": "Memory",
+                                            "children": {}
+                                        },
+                                        "l": {
+                                            "storage": 8192,
+                                            "unit": "MB",
+                                            "name": "Storage",
+                                            "isMeta": false,
+                                            "metaType": "Storage",
+                                            "base": "Storage",
+                                            "children": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "h": {
+                            "startScript": "sh OccupancyDetector.sh",
+                            "providedFunctionality": "occupancy_detector",
+                            "name": "OccupancyDetector",
+                            "stopScript": "",
+                            "requiredDevices": "",
+                            "requiredArtifacts": "",
+                            "requiredMiddleware": "",
+                            "requiredOS": "",
+                            "isMeta": false,
+                            "metaType": "ComponentType",
+                            "base": "ComponentType",
+                            "children": {
+                                "T": {
+                                    "memory": 256,
+                                    "unit": "MB",
+                                    "name": "Memory",
+                                    "isMeta": false,
+                                    "metaType": "Memory",
+                                    "base": "Memory",
+                                    "children": {}
+                                },
+                                "t": {
+                                    "unit": "MB",
+                                    "storage": 0,
+                                    "name": "Storage",
+                                    "isMeta": false,
+                                    "metaType": "Storage",
+                                    "base": "Storage",
+                                    "children": {}
+                                }
+                            }
+                        },
+                        "W": {
+                            "startScript": "sh Client.sh",
+                            "providedFunctionality": "parking_client",
+                            "name": "Client",
+                            "stopScript": "",
+                            "requiredDevices": "",
+                            "requiredArtifacts": "",
+                            "requiredMiddleware": "",
+                            "requiredOS": "",
+                            "isMeta": false,
+                            "metaType": "ComponentType",
+                            "base": "ComponentType",
+                            "children": {
+                                "b": {
+                                    "unit": "MB",
+                                    "memory": 0,
+                                    "name": "Memory",
+                                    "isMeta": false,
+                                    "metaType": "Memory",
+                                    "base": "Memory",
+                                    "children": {}
+                                },
+                                "o": {
+                                    "unit": "MB",
+                                    "storage": 0,
+                                    "name": "Storage",
+                                    "isMeta": false,
+                                    "metaType": "Storage",
+                                    "base": "Storage",
+                                    "children": {}
+                                }
+                            }
+                        },
+                        "L": {
+                            "startScript": "sh ImageCapture.sh",
+                            "providedFunctionality": "image_capture",
+                            "name": "ImageCapture",
+                            "stopScript": "",
+                            "requiredDevices": "",
+                            "requiredArtifacts": "",
+                            "requiredMiddleware": "",
+                            "requiredOS": "",
+                            "isMeta": false,
+                            "metaType": "ComponentType",
+                            "base": "ComponentType",
+                            "children": {
+                                "l": {
+                                    "unit": "MB",
+                                    "memory": 0,
+                                    "name": "Memory",
+                                    "isMeta": false,
+                                    "metaType": "Memory",
+                                    "base": "Memory",
+                                    "children": {}
+                                },
+                                "J": {
+                                    "unit": "MB",
+                                    "storage": 0,
+                                    "name": "Storage",
+                                    "isMeta": false,
+                                    "metaType": "Storage",
+                                    "base": "Storage",
+                                    "children": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "n": {
+            "name": "Language",
+            "isMeta": true,
+            "metaType": "Language",
+            "base": "FCO",
+            "children": {
+                "2": {
+                    "middleware": "",
+                    "OS": "",
+                    "name": "NodeTemplate",
+                    "isMeta": true,
+                    "metaType": "NodeTemplate",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "3": {
+                    "unit": "MB",
+                    "storage": 0,
+                    "name": "Storage",
+                    "isMeta": true,
+                    "metaType": "Storage",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "9": {
+                    "name": "ResourceUnit",
+                    "isMeta": false,
+                    "metaType": "FCO",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "r": {
+                    "status": "",
+                    "name": "Device",
+                    "isMeta": true,
+                    "metaType": "Device",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "V": {
+                    "name": "Objective",
+                    "isMeta": true,
+                    "metaType": "Objective",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "N": {
+                    "name": "FunctionalDependency",
+                    "isMeta": true,
+                    "metaType": "FunctionalDependency",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "i": {
+                    "name": "Folder",
+                    "isMeta": true,
+                    "metaType": "Folder",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "d": {
+                    "name": "CHARIOT Model",
+                    "isMeta": true,
+                    "metaType": "CHARIOT Model",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "G": {
+                    "unit": "MB",
+                    "memory": 0,
+                    "name": "Memory",
+                    "isMeta": true,
+                    "metaType": "Memory",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "S": {
+                    "name": "NodeCategory",
+                    "isMeta": true,
+                    "metaType": "NodeCategory",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "T": {
+                    "nodeCategories": "",
+                    "serviceComponentType": "",
+                    "numInstances": 0,
+                    "minInstances": 0,
+                    "maxInstances": 0,
+                    "functionality": "",
+                    "kind": "PER_NODE",
+                    "name": "ReplicationConstraint",
+                    "isMeta": true,
+                    "metaType": "ReplicationConstraint",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "M": {
+                    "location": "",
+                    "name": "Artifact",
+                    "isMeta": true,
+                    "metaType": "Artifact",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "Q": {
+                    "name": "ReplicationKind",
+                    "isMeta": false,
+                    "metaType": "FCO",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "F": {
+                    "name": "GoalDescription",
+                    "isMeta": true,
+                    "metaType": "GoalDescription",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "v": {
+                    "stopScript": "",
+                    "startScript": "",
+                    "requiredDevices": "",
+                    "requiredArtifacts": "",
+                    "requiredMiddleware": "",
+                    "requiredOS": "",
+                    "providedFunctionality": "",
+                    "name": "ComponentType",
+                    "isMeta": true,
+                    "metaType": "ComponentType",
+                    "base": "FCO",
+                    "children": {}
+                },
+                "m": {
+                    "name": "Functionality",
+                    "isMeta": true,
+                    "metaType": "Functionality",
+                    "base": "FCO",
+                    "children": {}
+                }
+            }
+        }
+    }
+}

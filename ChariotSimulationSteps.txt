@@ -1,0 +1,46 @@
+
+
+
+** Commands to run inside chariot_root/Runtime/Scripts folder (HAS TO BE DONE BEFORE ANYTHING ELSE)
+  ./SimulateNodes.sh start 3 edison 7000   <-- Start/simulate 2 nodes of template edison with port numbers starting at 7000 (in this case it edison_1 will get 7000, edison_2 will get 7001)
+  ./SimulateNodes.sh start 2 wifi_cam 7003   <-- Start/simulate 2 nodes of template wifi_cam with port numbers starting at 7002 (in this case it wifi_cam_1 will get 7002, wifi_cam_2 will get 7003)
+  ./SimulateNodes.sh start 1 entry_terminal 7005   <-- Start/simulate 1 node of template entry_terminal with port number 7004
+
+
+
+
+** At this point you have your hardware aspect of the system stored in the database.
+
+** Run the CHARIOT-ML interpreter to populate ConfigSpace in the database.
+
+
+** Install
+   - ZeroMq 4.1.2
+   - Z3 solver 4.4.1
+
+
+** For a five node example, start five different terminals and go to chariot_root/Runtime folder. (Pre-req: zeromq 4.1.2, z3 4.4.1)
+
+   python DeploymentManager.py --nodeName edison_1 --simulateDM
+   python DeploymentManager.py --nodeName edison_2 --simulateDM
+   python DeploymentManager.py --nodeName edison_3 --simulateDM
+   python DeploymentManager.py --nodeName wifi_cam_1 --simulateDM
+   python DeploymentManager.py --nodeName wifi_cam_2 --simulateDM
+   python DeploymentManager.py --nodeName entry_terminal_1 --simulateDM
+
+
+
+
+** Start CHARIOT Management Engine (Resilience Engine) in a different terminal from chariot_root/Runtime folder.
+
+   python ResilienceEngine.py --initialDeployment		<-- This will launch the ME/RE to do initial deployment of your system
+   python ResilienceEngine.py							<-- This will launch the ME/RE, which will then listen to requests on a socket
+
+
+
+
+
+** Fail a node using SimulateNodeActivity.py script inside chariot_root/Runtime folder (do this in a different terminal)
+   python SimulateNodeActivity.py --nodeName edison_1 --action stop
+
+   python SimulateNodeActivity.py --nodeName edison_1 --nodeTemplate edison --port 7000 --action start

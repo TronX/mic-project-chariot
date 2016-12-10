@@ -1,0 +1,19 @@
+{
+  "components": {
+    "seeds": {
+      "CHARIOTWebgme": {
+        "src": "src/seeds/CHARIOTWebgme"
+      }
+    },
+    "plugins": {
+      "CHARIOTInterpreter": {
+        "src": "src/plugins/CHARIOTInterpreter",
+        "test": "test/plugins/CHARIOTInterpreter"
+      }
+    }
+  },
+  "dependencies": {
+    "seeds": {},
+    "plugins": {}
+  }
+}

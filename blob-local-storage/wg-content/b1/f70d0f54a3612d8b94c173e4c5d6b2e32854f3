@@ -1,0 +1,134 @@
+[
+    {
+        "name": "FCO",
+        "path": "/1",
+        "nbrOfChildren": 0,
+        "base": null
+    },
+    {
+        "name": "Language",
+        "path": "/n",
+        "nbrOfChildren": 20,
+        "base": "FCO"
+    },
+    {
+        "name": "NodeTemplate",
+        "path": "/n/2",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "Storage",
+        "path": "/n/3",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "ComponentTypeModel",
+        "path": "/n/6",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "NodeCategoryPointer",
+        "path": "/n/7",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "CHARIOT Model",
+        "path": "/n/d",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "FunctionalityPointer",
+        "path": "/n/N",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "FunctionalityModel",
+        "path": "/n/f",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "GoalDescriptionModel",
+        "path": "/n/l",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "NodeCategoryModel",
+        "path": "/n/p",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "Memory",
+        "path": "/n/G",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "NodeCategory",
+        "path": "/n/S",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "ReplicationConstraint",
+        "path": "/n/T",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "Artifact",
+        "path": "/n/M",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "GoalDescription",
+        "path": "/n/F",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "ComponentType",
+        "path": "/n/v",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "Functionality",
+        "path": "/n/m",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "Device",
+        "path": "/n/r",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "Objective",
+        "path": "/n/V",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "Dependency",
+        "path": "/n/R",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    },
+    {
+        "name": "Folder",
+        "path": "/n/i",
+        "nbrOfChildren": 0,
+        "base": "FCO"
+    }
+]
