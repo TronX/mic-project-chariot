@@ -776,3 +776,46 @@
 
 2016-12-10T03:53:53.215Z - info: [gme:server:standalone] Requesting server to stop ...
 2016-12-10T03:53:53.227Z - info: [gme:server:standalone] Server stopped.
+2016-12-10T04:15:28.526Z - info: [gme:server:standalone:middleware:BlobServer:BlobBackend] local-storage: ./blob-local-storage
+2016-12-10T04:15:28.582Z - info: [gme:server:standalone] Valid addresses of gme web server:   http://127.0.0.1:8888  http://192.168.1.5:8888
+2016-12-10T04:15:28.584Z - info: [gme:server:auth:gmeauth] connecting mongodb://127.0.0.1:27017/mic_project_chariot {"db":{"w":1,"native_parser":true},"server":{"auto_reconnect":true,"socketOptions":{"keepAlive":1}}}
+2016-12-10T04:15:28.619Z - warn: [gme:server:auth:gmeauth] User "guest" was not found. We will attempt to create it automatically.
+2016-12-10T04:15:28.908Z - warn: [gme:server:auth:gmeauth] Guest access can be disabled by setting gmeConfig.authentication.allowGuests = false
+2016-12-10T04:15:28.910Z - info: [gme:server:auth:gmeauth] Guest account "guest" canCreate: true
+2016-12-10T04:15:28.911Z - warn: [gme:server:auth:gmeauth] Guest access can be disabled by setting gmeConfig.authentication.allowGuests = false
+2016-12-10T04:15:28.911Z - info: [gme:server:auth:gmeauth] Guest account "guest" canCreate: true
+2016-12-10T04:15:28.920Z - info: [gme:server:standalone:mongo] connecting mongodb://127.0.0.1:27017/mic_project_chariot {"db":{"w":1,"native_parser":true},"server":{"auto_reconnect":true,"socketOptions":{"keepAlive":1,"connectTimeoutMS":30000,"socketTimeoutMS":0,"host":"127.0.0.1","port":27017,"domainSocket":false,"timeout":0,"noDelay":true,"encoding":null,"bufferSize":0}}}
+2016-12-10T04:15:28.935Z - info: [gme:server:standalone] Server is listening ...
+2016-12-10T04:15:55.848Z - error: [gme:server:worker:simpleworker:pid_10554:WorkerFunctions:PluginManagerBase:plugin:CHARIOTInterpreter] 
+
+
+2016-12-10T04:17:16.902Z - info: [gme:server:standalone:api] Authenticated user did not exist in db, adding: guest
+2016-12-10T04:17:50.492Z - info: [gme:server:standalone:api] Authenticated user did not exist in db, adding: guest
+2016-12-10T04:18:07.876Z - info: [gme:server:standalone] Requesting server to stop ...
+2016-12-10T04:18:07.889Z - info: [gme:server:standalone] Server stopped.
+2016-12-10T04:18:12.949Z - info: [gme:server:standalone:middleware:BlobServer:BlobBackend] local-storage: ./blob-local-storage
+2016-12-10T04:18:13.002Z - info: [gme:server:standalone] Valid addresses of gme web server:   http://127.0.0.1:8888  http://192.168.1.5:8888
+2016-12-10T04:18:13.004Z - info: [gme:server:auth:gmeauth] connecting mongodb://127.0.0.1:27017/mic_project_chariot {"db":{"w":1,"native_parser":true},"server":{"auto_reconnect":true,"socketOptions":{"keepAlive":1}}}
+2016-12-10T04:18:13.045Z - warn: [gme:server:auth:gmeauth] Guest access can be disabled by setting gmeConfig.authentication.allowGuests = false
+2016-12-10T04:18:13.047Z - info: [gme:server:auth:gmeauth] Guest account "guest" canCreate: false
+2016-12-10T04:18:13.048Z - warn: [gme:server:auth:gmeauth] Guest access can be disabled by setting gmeConfig.authentication.allowGuests = false
+2016-12-10T04:18:13.049Z - info: [gme:server:auth:gmeauth] Guest account "guest" canCreate: false
+2016-12-10T04:18:13.057Z - info: [gme:server:standalone:mongo] connecting mongodb://127.0.0.1:27017/mic_project_chariot {"db":{"w":1,"native_parser":true},"server":{"auto_reconnect":true,"socketOptions":{"keepAlive":1,"connectTimeoutMS":30000,"socketTimeoutMS":0,"host":"127.0.0.1","port":27017,"domainSocket":false,"timeout":0,"noDelay":true,"encoding":null,"bufferSize":0}}}
+2016-12-10T04:18:13.073Z - info: [gme:server:standalone] Server is listening ...
+2016-12-10T04:18:46.651Z - info: [gme:server:standalone] Requesting server to stop ...
+2016-12-10T04:18:46.663Z - info: [gme:server:standalone] Server stopped.
+2016-12-10T04:18:51.480Z - info: [gme:server:standalone:middleware:BlobServer:BlobBackend] local-storage: ./blob-local-storage
+2016-12-10T04:18:51.531Z - info: [gme:server:standalone] Valid addresses of gme web server:   http://127.0.0.1:8888  http://192.168.1.5:8888
+2016-12-10T04:18:51.532Z - info: [gme:server:auth:gmeauth] connecting mongodb://127.0.0.1:27017/mic_project_chariot {"db":{"w":1,"native_parser":true},"server":{"auto_reconnect":true,"socketOptions":{"keepAlive":1}}}
+2016-12-10T04:18:51.565Z - warn: [gme:server:auth:gmeauth] User "guest" was not found. We will attempt to create it automatically.
+2016-12-10T04:18:51.857Z - warn: [gme:server:auth:gmeauth] Guest access can be disabled by setting gmeConfig.authentication.allowGuests = false
+2016-12-10T04:18:51.859Z - info: [gme:server:auth:gmeauth] Guest account "guest" canCreate: true
+2016-12-10T04:18:51.860Z - warn: [gme:server:auth:gmeauth] Guest access can be disabled by setting gmeConfig.authentication.allowGuests = false
+2016-12-10T04:18:51.861Z - info: [gme:server:auth:gmeauth] Guest account "guest" canCreate: true
+2016-12-10T04:18:51.868Z - info: [gme:server:standalone:mongo] connecting mongodb://127.0.0.1:27017/mic_project_chariot {"db":{"w":1,"native_parser":true},"server":{"auto_reconnect":true,"socketOptions":{"keepAlive":1,"connectTimeoutMS":30000,"socketTimeoutMS":0,"host":"127.0.0.1","port":27017,"domainSocket":false,"timeout":0,"noDelay":true,"encoding":null,"bufferSize":0}}}
+2016-12-10T04:18:51.881Z - info: [gme:server:standalone] Server is listening ...
+2016-12-10T04:19:32.438Z - error: [gme:server:worker:simpleworker:pid_10709:WorkerFunctions:PluginManagerBase:plugin:CHARIOTInterpreter] 
+
+
+2016-12-10T04:20:09.298Z - info: [gme:server:standalone] Requesting server to stop ...
+2016-12-10T04:20:09.310Z - info: [gme:server:standalone] Server stopped.
